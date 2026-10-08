@@ -4,9 +4,9 @@
 
 **Blocked by:** 02 (Typed Site Configuration & Hero Showcase)
 
-**Status:** ready-for-agent
+**Status:** resolved
 
-- [ ] Social channels grid rendered beneath the Hero section with responsive column layouts
-- [ ] Frosted-glass card aesthetics implemented with subtle borders and hover micro-interactions
-- [ ] Each card displays platform branding, descriptive summary, and external link with secure attributes
-- [ ] Test verifies all configured social channels render with appropriate links and accessible labels
+- [x] Social channels grid rendered beneath the Hero section with responsive column layouts
+- [x] Frosted-glass card aesthetics implemented with subtle borders and hover micro-interactions
+- [x] Each card displays platform branding, descriptive summary, and external link with secure attributes
+- [x] Test verifies all configured social channels render with appropriate links and accessible labels
