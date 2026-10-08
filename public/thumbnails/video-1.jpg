@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <pattern id="grid1" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="640" height="360" fill="url(#bg1)" />
+  <rect width="640" height="360" fill="url(#grid1)" />
+
+  <!-- Ambient Glow Circles -->
+  <circle cx="520" cy="90" r="140" fill="#3b82f6" opacity="0.18" filter="blur(40px)" />
+  <circle cx="120" cy="280" r="120" fill="#8b5cf6" opacity="0.15" filter="blur(40px)" />
+
+  <!-- Code / Architecture diagram card -->
+  <g transform="translate(60, 50)">
+    <!-- Terminal / Editor window -->
+    <rect width="520" height="260" rx="16" fill="#0f172a" fill-opacity="0.8" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Window controls -->
+    <circle cx="28" cy="24" r="5" fill="#ef4444" />
+    <circle cx="44" cy="24" r="5" fill="#f59e0b" />
+    <circle cx="60" cy="24" r="5" fill="#10b981" />
+    <text x="260" y="28" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">architecture.ts — Next.js 16 + TypeScript</text>
+
+    <!-- Code & Architecture Elements -->
+    <g transform="translate(30, 60)">
+      <rect width="180" height="150" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.5" />
+      <text x="90" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#60a5fa" text-anchor="middle">App Router</text>
+      <text x="90" y="60" font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">app/page.tsx</text>
+      <text x="90" y="85" font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">app/layout.tsx</text>
+      <text x="90" y="115" font-family="system-ui, sans-serif" font-size="10" fill="#38bdf8" text-anchor="middle">⚡ Server Components</text>
+    </g>
+
+    <!-- Flow Arrow -->
+    <path d="M 225 135 L 265 135" stroke="url(#accent1)" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)" />
+
+    <g transform="translate(280, 60)">
+      <rect width="210" height="150" rx="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.5" />
+      <text x="105" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#a78bfa" text-anchor="middle">Domain Layer</text>
+      <text x="105" y="60" font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">lib/site-config.ts</text>
+      <text x="105" y="85" font-family="monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">lib/utils.ts</text>
+      <text x="105" y="115" font-family="system-ui, sans-serif" font-size="10" fill="#c084fc" text-anchor="middle">🛡️ Type-Safe Contracts</text>
+    </g>
+  </g>
+</svg>

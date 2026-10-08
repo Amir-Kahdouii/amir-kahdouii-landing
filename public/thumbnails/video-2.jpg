@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041f2a" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#064e3b" />
+    </linearGradient>
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <pattern id="grid2" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#0e7490" stroke-width="0.75" stroke-opacity="0.25" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="640" height="360" fill="url(#bg2)" />
+  <rect width="640" height="360" fill="url(#grid2)" />
+
+  <!-- Ambient Glow Circles -->
+  <circle cx="150" cy="100" r="130" fill="#06b6d4" opacity="0.2" filter="blur(45px)" />
+  <circle cx="480" cy="260" r="130" fill="#10b981" opacity="0.18" filter="blur(45px)" />
+
+  <!-- Design & UI Component Card -->
+  <g transform="translate(60, 50)">
+    <!-- Main Glass Container -->
+    <rect width="520" height="260" rx="16" fill="#0f172a" fill-opacity="0.8" stroke="#1e293b" stroke-width="1.5" />
+
+    <!-- Window controls -->
+    <circle cx="28" cy="24" r="5" fill="#ef4444" />
+    <circle cx="44" cy="24" r="5" fill="#f59e0b" />
+    <circle cx="60" cy="24" r="5" fill="#10b981" />
+    <text x="260" y="28" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">design-system.css — Tailwind CSS v4 + RTL</text>
+
+    <!-- Glassmorphism Preview Mockup Card inside -->
+    <g transform="translate(40, 60)">
+      <rect width="210" height="150" rx="12" fill="#1e293b" fill-opacity="0.9" stroke="#06b6d4" stroke-width="1" />
+      <text x="105" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#38bdf8" text-anchor="middle">🎨 Frosted Glass UI</text>
+      <rect x="25" y="55" width="160" height="28" rx="6" fill="#083344" stroke="#0e7490" stroke-width="1" />
+      <text x="105" y="73" font-family="system-ui, sans-serif" font-size="11" fill="#67e8f9" text-anchor="middle">backdrop-blur-xl</text>
+      <rect x="25" y="95" width="160" height="28" rx="6" fill="#064e3b" stroke="#059669" stroke-width="1" />
+      <text x="105" y="113" font-family="system-ui, sans-serif" font-size="11" fill="#6ee7b7" text-anchor="middle">dir="rtl" Vazirmatn</text>
+    </g>
+
+    <!-- CSS Code Preview -->
+    <g transform="translate(275, 60)">
+      <rect width="205" height="150" rx="12" fill="#090d16" stroke="#334155" stroke-width="1" />
+      <text x="20" y="35" font-family="monospace" font-size="11" fill="#ec4899">@theme inline {</text>
+      <text x="32" y="60" font-family="monospace" font-size="11" fill="#06b6d4">--font-sans: vazir;</text>
+      <text x="32" y="85" font-family="monospace" font-size="11" fill="#10b981">--glass: blur(16px);</text>
+      <text x="32" y="110" font-family="monospace" font-size="11" fill="#f59e0b">--start: flex-start;</text>
+      <text x="20" y="132" font-family="monospace" font-size="11" fill="#ec4899">}</text>
+    </g>
+  </g>
+</svg>

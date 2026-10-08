@@ -1,6 +1,7 @@
 import React from "react";
 import { HeroSection } from "@/components/hero-section";
 import { SocialGrid } from "@/components/social-grid";
+import { FeaturedVideos } from "@/components/featured-videos";
 import { siteConfig } from "@/lib/site-config";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <div className="w-full max-w-4xl mx-auto flex flex-col items-center gap-12 py-6">
         <HeroSection config={siteConfig} />
         <SocialGrid config={siteConfig} />
+        <FeaturedVideos config={siteConfig} />
       </div>
     </main>
   );
