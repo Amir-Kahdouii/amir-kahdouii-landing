@@ -1,0 +1,98 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAFAFA" />
+      <stop offset="50%" stop-color="#F4F5F8" />
+      <stop offset="100%" stop-color="#EDEFF5" />
+    </linearGradient>
+
+    <!-- Ambient Glows -->
+    <radialGradient id="glowBrand" cx="80%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#4361EE" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#4361EE" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowRed" cx="20%" cy="80%" r="45%">
+      <stop offset="0%" stop-color="#E53935" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#E53935" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowSky" cx="30%" cy="25%" r="40%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#0284C7" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Shadow Filter -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#1E2024" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="950" cy="140" r="380" fill="url(#glowBrand)" />
+  <circle cx="200" cy="500" r="340" fill="url(#glowRed)" />
+  <circle cx="350" cy="180" r="280" fill="url(#glowSky)" />
+
+  <!-- Outer Glass Frame -->
+  <rect x="70" y="60" width="1060" height="510" rx="32" fill="#FFFFFF" fill-opacity="0.85" stroke="#E2E4E9" stroke-width="2" filter="url(#cardShadow)" />
+
+  <!-- Inner Ambient Sheen -->
+  <rect x="72" y="62" width="1056" height="180" rx="30" fill="url(#glowBrand)" opacity="0.3" />
+
+  <!-- Brand Accent Top Bar -->
+  <rect x="70" y="60" width="1060" height="8" rx="4" fill="#4361EE" />
+
+  <!-- Content Group (RTL Oriented) -->
+  <g direction="rtl" style="font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    <!-- Status / Channel Badge -->
+    <g transform="translate(1030, 130)">
+      <rect x="-260" y="0" width="260" height="42" rx="21" fill="#F1F3F9" stroke="#D7DBE7" stroke-width="1.5" />
+      <circle cx="-25" cy="21" r="5" fill="#10B981" />
+      <text x="-42" y="27" font-size="16" font-weight="600" fill="#374151" text-anchor="start">هاب رسمی و ویترین کار</text>
+    </g>
+
+    <!-- Main Title (Persian Name) -->
+    <text x="1030" y="245" font-size="58" font-weight="800" fill="#111827" text-anchor="start">
+      امیر کاهدویی
+    </text>
+
+    <!-- Subtitle / Headline -->
+    <text x="1030" y="315" font-size="28" font-weight="600" fill="#374151" text-anchor="start">
+      توسعه‌دهنده نرم‌افزار، تولیدکننده محتوا و مربی مهندسی
+    </text>
+
+    <!-- Bio / Mission Text -->
+    <text x="1030" y="375" font-size="21" font-weight="400" fill="#6B7280" text-anchor="start">
+      خلق تجربیات مدرن وب و آموزش عمیق مهندسی نرم‌افزار در یوتیوب و تلگرام
+    </text>
+
+    <!-- Channel Pills -->
+    <!-- YouTube -->
+    <g transform="translate(1030, 440)">
+      <rect x="-180" y="0" width="180" height="48" rx="24" fill="#FEE2E2" stroke="#FCA5A5" stroke-width="1" />
+      <circle cx="-26" cy="24" r="10" fill="#DC2626" />
+      <text x="-48" y="30" font-size="17" font-weight="600" fill="#991B1B" text-anchor="start">کانال یوتیوب</text>
+    </g>
+
+    <!-- Telegram -->
+    <g transform="translate(830, 440)">
+      <rect x="-180" y="0" width="180" height="48" rx="24" fill="#E0F2FE" stroke="#7DD3FC" stroke-width="1" />
+      <circle cx="-26" cy="24" r="10" fill="#0284C7" />
+      <text x="-48" y="30" font-size="17" font-weight="600" fill="#0369A1" text-anchor="start">کانال تلگرام</text>
+    </g>
+
+    <!-- LinkedIn -->
+    <g transform="translate(630, 440)">
+      <rect x="-180" y="0" width="180" height="48" rx="24" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1" />
+      <circle cx="-26" cy="24" r="10" fill="#2563EB" />
+      <text x="-48" y="30" font-size="17" font-weight="600" fill="#1D4ED8" text-anchor="start">شبکه لینکدین</text>
+    </g>
+
+    <!-- URL Indicator at Left Side -->
+    <g transform="translate(120, 500)">
+      <text x="0" y="0" font-size="18" font-weight="600" fill="#9CA3AF" direction="ltr">amirkahdouii.com</text>
+    </g>
+  </g>
+</svg>

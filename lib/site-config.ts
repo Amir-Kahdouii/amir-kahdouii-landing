@@ -49,10 +49,12 @@ export interface SiteConfig {
   about?: {
     heading: string;
     paragraphs: string[];
+    focusAreas?: string[];
   };
   footer?: {
     copyright: string;
-    links: Array<{ label: string; href: string }>;
+    contactEmail?: string;
+    links: Array<{ label: string; href: string; icon?: string }>;
   };
 }
 
@@ -138,13 +140,16 @@ export const siteConfig: SiteConfig = {
       "بیش از چند سال است که در زمینه مهندسی نرم‌افزار، توسعه وب و طراحی سیستم‌های مدرن فعالیت می‌کنم.",
       "هدف من از راه‌اندازی این هاب، ایجاد پلی ارتباطی میان توسعه‌دهندگان، اشتراک‌گذاری تجربیات واقعی پروژه‌ها و ارتقای استاندارد فنی جامعه مهندسی نرم‌افزار فارسی‌زبان است.",
     ],
+    focusAreas: ["معماری وب مدرن", "توسعه فول‌استک", "تولید محتوای آموزشی", "کامیونیتی مهندسی"],
   },
   footer: {
     copyright: "تمامی حقوق برای امیر کاهدویی محفوظ است.",
+    contactEmail: "contact@amirkahdouii.com",
     links: [
-      { label: "یوتیوب", href: "https://youtube.com/@amirkahdouii" },
-      { label: "تلگرام", href: "https://t.me/amirkahdouii" },
-      { label: "لینکدین", href: "https://linkedin.com/in/amirkahdouii" },
+      { label: "یوتیوب", href: "https://youtube.com/@amirkahdouii", icon: "youtube" },
+      { label: "تلگرام", href: "https://t.me/amirkahdouii", icon: "telegram" },
+      { label: "لینکدین", href: "https://linkedin.com/in/amirkahdouii", icon: "linkedin" },
+      { label: "گیت‌هاب", href: "https://github.com/amirkahdouii", icon: "github" },
     ],
   },
 };
