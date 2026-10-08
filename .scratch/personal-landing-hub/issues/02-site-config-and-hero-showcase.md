@@ -4,9 +4,9 @@
 
 **Blocked by:** 01 (Project Foundation & Persian RTL Shell)
 
-**Status:** ready-for-agent
+**Status:** resolved
 
-- [ ] Type-safe site configuration module created with fields for personal identity, social URLs, and action labels
-- [ ] Hero section renders personal portrait/avatar, name, title, and bio description
-- [ ] Primary call-to-action buttons for YouTube and Telegram render with prominent styling and valid links
-- [ ] Unit/render test validates configuration schema and confirms Hero section renders expected content
+- [x] Type-safe site configuration module created with fields for personal identity, social URLs, and action labels
+- [x] Hero section renders personal portrait/avatar, name, title, and bio description
+- [x] Primary call-to-action buttons for YouTube and Telegram render with prominent styling and valid links
+- [x] Unit/render test validates configuration schema and confirms Hero section renders expected content
