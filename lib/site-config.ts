@@ -1,3 +1,5 @@
+import initialFeaturedVideos from "@/data/featured-videos.json";
+
 export interface CtaAction {
   label: string;
   href: string;
@@ -67,26 +69,8 @@ function parseJsonEnv<T>(value: string | undefined, fallback: T): T {
   }
 }
 
-const defaultFeaturedVideos: FeaturedVideoConfig[] = [
-  {
-    id: "video-1",
-    title: "معماری اصولی وب‌اپلیکیشن‌ها با Next.js و TypeScript",
-    description: "بررسی الگوهای معماری تمیز، مدیریت ساختار پوشه‌ها و بهترین تجارب توسعه مقیاس‌پذیر.",
-    youtubeUrl: "https://youtube.com/@amirkahdouii",
-    thumbnailUrl: "/thumbnails/video-1.svg",
-    duration: "۲۴ دقیقه",
-    tag: "Next.js",
-  },
-  {
-    id: "video-2",
-    title: "طراحی رابط‌های کاربری مدرن راست‌چین با Tailwind CSS",
-    description: "راهنمای جامع پیاده‌سازی سیستم دیزاین فارسی، فونت‌های بهینه و انیمیشن‌های روان.",
-    youtubeUrl: "https://youtube.com/@amirkahdouii",
-    thumbnailUrl: "/thumbnails/video-2.svg",
-    duration: "۱۸ دقیقه",
-    tag: "Tailwind CSS",
-  },
-];
+const defaultFeaturedVideos: FeaturedVideoConfig[] =
+  initialFeaturedVideos as FeaturedVideoConfig[];
 
 const defaultAboutParagraphs: string[] = [
   "بیش از چند سال است که در زمینه مهندسی نرم‌افزار، توسعه وب و طراحی سیستم‌های مدرن فعالیت می‌کنم.",

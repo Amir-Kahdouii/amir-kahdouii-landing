@@ -1,0 +1,46 @@
+name: Sync Latest YouTube Videos
+
+on:
+  schedule:
+    # Run once every 24 hours at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "youtube-sync"
+  cancel-in-progress: false
+
+jobs:
+  sync-videos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync featured videos from YouTube
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_HANDLE: ${{ vars.YOUTUBE_CHANNEL_HANDLE || 'amirkahdouii' }}
+          YOUTUBE_CHANNEL_ID: ${{ vars.YOUTUBE_CHANNEL_ID || '' }}
+        run: node scripts/sync-youtube-videos.mjs
+
+      - name: Commit and push changes if updated
+        run: |
+          if [ -n "$(git status --porcelain data/featured-videos.json)" ]; then
+            echo "New video changes detected. Committing and pushing..."
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/featured-videos.json
+            git commit -m "chore(videos): sync latest featured YouTube videos"
+            git push
+          else
+            echo "No changes in featured videos. Repository is up to date."
+          fi
