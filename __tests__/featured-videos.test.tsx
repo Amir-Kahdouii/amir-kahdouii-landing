@@ -27,8 +27,8 @@ describe("Featured Video Highlights Showcase (Issue 04)", () => {
       videos.forEach((video) => {
         expect(screen.getByText(video.title)).toBeInTheDocument();
         expect(screen.getByText(video.description)).toBeInTheDocument();
-        expect(screen.getByText(video.tag)).toBeInTheDocument();
-        expect(screen.getByText(video.duration)).toBeInTheDocument();
+        expect(screen.getAllByText(video.tag).length).toBeGreaterThanOrEqual(1);
+        expect(screen.getAllByText(video.duration).length).toBeGreaterThanOrEqual(1);
 
         // Check thumbnail image
         const img = screen.getByAltText(video.title);

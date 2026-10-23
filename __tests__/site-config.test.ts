@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { getSiteConfig } from "@/lib/site-config";
+import featuredVideosData from "@/data/featured-videos.json";
 
 describe("Site Configuration Environment Variables Integration", () => {
   const originalEnv = process.env;
@@ -75,7 +76,7 @@ describe("Site Configuration Environment Variables Integration", () => {
     const config = getSiteConfig();
     expect(config.featuredVideos).toBeDefined();
     expect(config.featuredVideos?.length).toBeGreaterThan(0);
-    expect(config.featuredVideos?.[0].id).toBe("video-1");
+    expect(config.featuredVideos).toEqual(featuredVideosData);
   });
 
   it("does not read featured videos from NEXT_PUBLIC_FEATURED_VIDEOS_JSON", () => {
@@ -93,6 +94,7 @@ describe("Site Configuration Environment Variables Integration", () => {
 
     const config = getSiteConfig();
     // Must still load from data/featured-videos.json, not env
-    expect(config.featuredVideos?.[0].id).toBe("video-1");
+    expect(config.featuredVideos).toEqual(featuredVideosData);
+    expect(config.featuredVideos?.[0].id).not.toBe("env-video");
   });
 });
