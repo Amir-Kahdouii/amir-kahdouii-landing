@@ -8,3 +8,11 @@ vi.mock('next/font/google', () => ({
     style: { fontFamily: 'Vazirmatn' },
   }),
 }));
+
+vi.mock('next/font/local', () => ({
+  default: () => ({
+    className: 'font-vazirmatn',
+    variable: '--font-vazirmatn',
+    style: { fontFamily: 'Vazirmatn' },
+  }),
+}));
