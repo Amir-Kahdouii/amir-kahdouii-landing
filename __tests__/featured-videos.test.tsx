@@ -103,6 +103,16 @@ describe("Featured Video Highlights Showcase (Issue 04)", () => {
 
       const { container } = render(<FeaturedVideos config={emptyConfig} />);
       expect(container.firstChild).toBeNull();
+
+      const undefinedConfig = {
+        ...siteConfig,
+        featuredVideos: undefined,
+      };
+
+      const { container: undefinedContainer } = render(
+        <FeaturedVideos config={undefinedConfig} />
+      );
+      expect(undefinedContainer.firstChild).toBeNull();
     });
   });
 });

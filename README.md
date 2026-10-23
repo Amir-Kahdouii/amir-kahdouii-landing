@@ -84,7 +84,6 @@ npm run dev
 | `NEXT_PUBLIC_TELEGRAM_URL` | لینک کانال یا گروه تلگرام | `"https://t.me/channel"` |
 | `NEXT_PUBLIC_LINKEDIN_URL` | لینک صفحه لینکدین | `"https://linkedin.com/in/username"` |
 | `NEXT_PUBLIC_GITHUB_URL` | لینک پروفایل گیت‌هاب | `"https://github.com/username"` |
-| `NEXT_PUBLIC_FEATURED_VIDEOS_JSON` | لیست ویدیوهای برگزیده | آرایه JSON شامل عنوان، لینک و کاور |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | ایمیل تماس فوتر | `"contact@example.com"` |
 
 برای مشاهده لیست کامل متغیرها، فایل [`.env.example`](.env.example) را بررسی نمایید.

@@ -1,4 +1,4 @@
-import initialFeaturedVideos from "@/data/featured-videos.json";
+import featuredVideosData from "@/data/featured-videos.json";
 
 export interface CtaAction {
   label: string;
@@ -69,8 +69,11 @@ function parseJsonEnv<T>(value: string | undefined, fallback: T): T {
   }
 }
 
-const defaultFeaturedVideos: FeaturedVideoConfig[] =
-  initialFeaturedVideos as FeaturedVideoConfig[];
+const rawFeaturedVideos = (featuredVideosData || []) as FeaturedVideoConfig[];
+const loadedFeaturedVideos: FeaturedVideoConfig[] | undefined =
+  Array.isArray(rawFeaturedVideos) && rawFeaturedVideos.length > 0
+    ? rawFeaturedVideos
+    : undefined;
 
 const defaultAboutParagraphs: string[] = [
   "بیش از چند سال است که در زمینه مهندسی نرم‌افزار، توسعه وب و طراحی سیستم‌های مدرن فعالیت می‌کنم.",
@@ -180,10 +183,7 @@ export function getSiteConfig(): SiteConfig {
       "اطلاعیه‌ها، نکات روزانه، پرسش‌وپاسخ و کامیونیتی برنامه‌نویسان",
   };
 
-  const featuredVideos = parseJsonEnv<FeaturedVideoConfig[]>(
-    process.env.NEXT_PUBLIC_FEATURED_VIDEOS_JSON,
-    defaultFeaturedVideos
-  );
+  const featuredVideos = loadedFeaturedVideos;
 
   const aboutHeading =
     process.env.NEXT_PUBLIC_ABOUT_HEADING || `درباره ${name}`;

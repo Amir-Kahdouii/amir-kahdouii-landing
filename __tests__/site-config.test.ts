@@ -71,33 +71,28 @@ describe("Site Configuration Environment Variables Integration", () => {
     expect(config.socials.github?.handle).toBe("customgithub");
   });
 
-  it("parses featured videos JSON string correctly from env variable", () => {
-    const customVideos = [
-      {
-        id: "custom-1",
-        title: "ویدیوی تستی اول",
-        description: "توضیحات ویدیوی تست",
-        youtubeUrl: "https://youtube.com/watch?v=123",
-        thumbnailUrl: "https://example.com/thumb.jpg",
-        duration: "۱۵ دقیقه",
-        tag: "React",
-      },
-    ];
-
-    process.env.NEXT_PUBLIC_FEATURED_VIDEOS_JSON = JSON.stringify(customVideos);
-
-    const config = getSiteConfig();
-    expect(config.featuredVideos).toHaveLength(1);
-    expect(config.featuredVideos?.[0].title).toBe("ویدیوی تستی اول");
-    expect(config.featuredVideos?.[0].tag).toBe("React");
-  });
-
-  it("gracefully falls back to default videos if NEXT_PUBLIC_FEATURED_VIDEOS_JSON is invalid JSON", () => {
-    process.env.NEXT_PUBLIC_FEATURED_VIDEOS_JSON = "invalid-json-string{";
-
+  it("loads featured videos directly from data/featured-videos.json", () => {
     const config = getSiteConfig();
     expect(config.featuredVideos).toBeDefined();
     expect(config.featuredVideos?.length).toBeGreaterThan(0);
+    expect(config.featuredVideos?.[0].id).toBe("video-1");
+  });
+
+  it("does not read featured videos from NEXT_PUBLIC_FEATURED_VIDEOS_JSON", () => {
+    process.env.NEXT_PUBLIC_FEATURED_VIDEOS_JSON = JSON.stringify([
+      {
+        id: "env-video",
+        title: "Env Video Title",
+        description: "Env description",
+        youtubeUrl: "https://youtube.com/watch?v=env",
+        thumbnailUrl: "/thumb.jpg",
+        duration: "۱۰ دقیقه",
+        tag: "Test",
+      },
+    ]);
+
+    const config = getSiteConfig();
+    // Must still load from data/featured-videos.json, not env
     expect(config.featuredVideos?.[0].id).toBe("video-1");
   });
 });
