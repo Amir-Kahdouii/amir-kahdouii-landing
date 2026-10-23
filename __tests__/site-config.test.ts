@@ -37,11 +37,13 @@ describe("Site Configuration Environment Variables Integration", () => {
     process.env.NEXT_PUBLIC_SITE_BIO = "طراح محصول و متخصص UI/UX با بیش از ۸ سال تجربه";
     process.env.NEXT_PUBLIC_SITE_URL = "https://sararezaei.dev";
     process.env.NEXT_PUBLIC_AVATAR_SRC = "https://images.example.com/sara.jpg";
+    process.env.NEXT_PUBLIC_PAGE_TITLE = "سارا رضایی | طراحی مدرن محصول";
     process.env.NEXT_PUBLIC_CONTACT_EMAIL = "hello@sararezaei.dev";
 
     const config = getSiteConfig();
     expect(config.name).toBe("سارا رضایی");
     expect(config.title).toBe("طراح ارشد رابط کاربری");
+    expect(config.pageTitle).toBe("سارا رضایی | طراحی مدرن محصول");
     expect(config.headline).toBe("خلق تجربیات کاربری بی‌نظیر");
     expect(config.bio).toBe("طراح محصول و متخصص UI/UX با بیش از ۸ سال تجربه");
     expect(config.siteUrl).toBe("https://sararezaei.dev");

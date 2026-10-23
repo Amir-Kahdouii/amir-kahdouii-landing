@@ -28,6 +28,7 @@ export interface FeaturedVideoConfig {
 export interface SiteConfig {
   name: string;
   title: string;
+  pageTitle?: string;
   headline: string;
   bio: string;
   siteUrl: string;
@@ -92,6 +93,9 @@ export function getSiteConfig(): SiteConfig {
   const title =
     process.env.NEXT_PUBLIC_SITE_TITLE ||
     "توسعه‌دهنده نرم‌افزار، تولیدکننده محتوا و مربی مهندسی";
+  const pageTitle =
+    process.env.NEXT_PUBLIC_PAGE_TITLE ||
+    `${name} | ویترین شخصی و هاب ارتباطی`;
   const headline =
     process.env.NEXT_PUBLIC_SITE_HEADLINE ||
     "خلق تجربیات مدرن وب و آموزش عمیق مهندسی نرم‌افزار";
@@ -205,6 +209,7 @@ export function getSiteConfig(): SiteConfig {
   return {
     name,
     title,
+    pageTitle,
     headline,
     bio,
     siteUrl,

@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: `${siteConfig.name} | ویترین شخصی و هاب ارتباطی`,
+    default: siteConfig.pageTitle || `${siteConfig.name} | ویترین شخصی و هاب ارتباطی`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.bio,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     locale: "fa_IR",
     url: siteConfig.siteUrl,
     siteName: `${siteConfig.name} | ویترین شخصی`,
-    title: `${siteConfig.name} | ویترین شخصی و هاب ارتباطی`,
+    title: siteConfig.pageTitle || `${siteConfig.name} | ویترین شخصی و هاب ارتباطی`,
     description: siteConfig.bio,
     images: [
       {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | ویترین شخصی و هاب ارتباطی`,
+    title: siteConfig.pageTitle || `${siteConfig.name} | ویترین شخصی و هاب ارتباطی`,
     description: siteConfig.bio,
     creator: siteConfig.socials.youtube.handle || `@${siteConfig.name}`,
     images: [siteConfig.ogImage],
