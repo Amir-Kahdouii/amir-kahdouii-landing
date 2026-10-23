@@ -2,7 +2,6 @@ import * as React from "react";
 import { ArrowLeft } from "lucide-react";
 import { SiteConfig, siteConfig as defaultSiteConfig } from "@/lib/site-config";
 import { Avatar } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { YouTubeIcon, TelegramIcon } from "@/components/icons";
 
@@ -25,24 +24,6 @@ export function HeroSection({
         aria-hidden="true"
         className="pointer-events-none absolute -top-16 start-1/2 -z-10 h-64 w-64 -translate-x-1/2 rounded-full bg-brand/15 blur-3xl opacity-80"
       />
-
-      {/* Status / Availability badge */}
-      {config.statusBadge && (
-        <div className="mb-6 flex items-center justify-center">
-          <Badge
-            variant="outline"
-            className="border-border/80 bg-card/80 px-3.5 py-1 text-xs font-normal text-muted-foreground shadow-sm"
-          >
-            {config.statusBadge.active && (
-              <span className="relative flex size-2">
-                <span className="absolute inline-flex size-full animate-ping rounded-full bg-success opacity-75" />
-                <span className="relative inline-flex size-2 rounded-full bg-success" />
-              </span>
-            )}
-            <span>{config.statusBadge.text}</span>
-          </Badge>
-        </div>
-      )}
 
       {/* Avatar Container with glowing ring */}
       <div className="relative mb-6 group">

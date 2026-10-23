@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Vazirmatn } from "next/font/google";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const vazirmatn = Vazirmatn({
@@ -17,15 +18,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://amirkahdouii.com"),
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "امیر کاهدویی | ویترین شخصی و هاب ارتباطی",
-    template: "%s | امیر کاهدویی",
+    default: `${siteConfig.name} | ویترین شخصی و هاب ارتباطی`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "ویترین رسمی فعالیت‌های تولید محتوا، کانال یوتیوب، کامیونیتی تلگرام و لینکدین امیر کاهدویی.",
+  description: siteConfig.bio,
   keywords: [
-    "امیر کاهدویی",
+    siteConfig.name,
+    siteConfig.title,
     "توسعه‌دهنده نرم‌افزار",
     "مهندسی نرم‌افزار",
     "یوتیوب فارسی",
@@ -33,35 +34,33 @@ export const metadata: Metadata = {
     "آموزش Next.js",
     "توسعه وب",
   ],
-  authors: [{ name: "امیر کاهدویی", url: "https://amirkahdouii.com" }],
-  creator: "امیر کاهدویی",
+  authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
+  creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "fa_IR",
-    url: "https://amirkahdouii.com",
-    siteName: "امیر کاهدویی | ویترین شخصی",
-    title: "امیر کاهدویی | ویترین شخصی و هاب ارتباطی",
-    description:
-      "ویترین رسمی فعالیت‌های تولید محتوا، کانال یوتیوب، کامیونیتی تلگرام و لینکدین امیر کاهدویی.",
+    url: siteConfig.siteUrl,
+    siteName: `${siteConfig.name} | ویترین شخصی`,
+    title: `${siteConfig.name} | ویترین شخصی و هاب ارتباطی`,
+    description: siteConfig.bio,
     images: [
       {
-        url: "/og-image.svg",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "امیر کاهدویی - هاب رسمی ارتباطی و آموزشی",
+        alt: `${siteConfig.name} - هاب رسمی ارتباطی و آموزشی`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "امیر کاهدویی | ویترین شخصی و هاب ارتباطی",
-    description:
-      "ویترین رسمی فعالیت‌های تولید محتوا، کانال یوتیوب، کامیونیتی تلگرام و لینکدین امیر کاهدویی.",
-    creator: "@amirkahdouii",
-    images: ["/og-image.svg"],
+    title: `${siteConfig.name} | ویترین شخصی و هاب ارتباطی`,
+    description: siteConfig.bio,
+    creator: siteConfig.socials.youtube.handle || `@${siteConfig.name}`,
+    images: [siteConfig.ogImage],
   },
   alternates: {
-    canonical: "https://amirkahdouii.com",
+    canonical: siteConfig.siteUrl,
   },
   icons: {
     icon: "/favicon.ico",

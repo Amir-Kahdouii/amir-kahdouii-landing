@@ -16,7 +16,7 @@ describe("Frosted Glass Social Channels Grid (Issue 03)", () => {
       expect(heading.textContent).toBeTruthy();
     });
 
-    it("renders individual cards for configured social channels (YouTube, Telegram, LinkedIn)", () => {
+    it("renders individual cards for configured social channels (YouTube, Telegram, LinkedIn, GitHub)", () => {
       render(<SocialGrid config={siteConfig} />);
 
       // YouTube card
@@ -33,6 +33,11 @@ describe("Frosted Glass Social Channels Grid (Issue 03)", () => {
       expect(screen.getByText(siteConfig.socials.linkedin.label)).toBeInTheDocument();
       expect(screen.getByText(siteConfig.socials.linkedin.handle)).toBeInTheDocument();
       expect(screen.getByText(siteConfig.socials.linkedin.description!)).toBeInTheDocument();
+
+      // GitHub card
+      expect(screen.getByText(siteConfig.socials.github!.label)).toBeInTheDocument();
+      expect(screen.getByText(siteConfig.socials.github!.handle)).toBeInTheDocument();
+      expect(screen.getByText(siteConfig.socials.github!.description!)).toBeInTheDocument();
     });
 
     it("renders platform stat or community tags when provided", () => {
@@ -41,6 +46,7 @@ describe("Frosted Glass Social Channels Grid (Issue 03)", () => {
       expect(screen.getByText(siteConfig.socials.youtube.stat!)).toBeInTheDocument();
       expect(screen.getByText(siteConfig.socials.telegram.stat!)).toBeInTheDocument();
       expect(screen.getByText(siteConfig.socials.linkedin.stat!)).toBeInTheDocument();
+      expect(screen.getByText(siteConfig.socials.github!.stat!)).toBeInTheDocument();
     });
 
     it("renders secure external links with noopener, noreferrer, and target=_blank for all channels", () => {
@@ -66,6 +72,26 @@ describe("Frosted Glass Social Channels Grid (Issue 03)", () => {
       expect(linkedinLinks.length).toBeGreaterThanOrEqual(1);
       expect(linkedinLinks[0]).toHaveAttribute("target", "_blank");
       expect(linkedinLinks[0]).toHaveAttribute("rel", "noopener noreferrer");
+
+      const githubLinks = screen.getAllByRole("link").filter(
+        (link) => link.getAttribute("href") === siteConfig.socials.github!.url
+      );
+      expect(githubLinks.length).toBeGreaterThanOrEqual(1);
+      expect(githubLinks[0]).toHaveAttribute("target", "_blank");
+      expect(githubLinks[0]).toHaveAttribute("rel", "noopener noreferrer");
+    });
+
+    it("hides GitHub card when showGithub is set to false", () => {
+      render(<SocialGrid config={siteConfig} showGithub={false} />);
+      expect(screen.queryByText(siteConfig.socials.github!.label)).not.toBeInTheDocument();
+    });
+
+    it("renders a 2-column responsive grid layout for 4 social channels", () => {
+      const { container } = render(<SocialGrid config={siteConfig} />);
+      const grid = container.querySelector(".grid");
+      expect(grid).toBeInTheDocument();
+      expect(grid).toHaveClass("sm:grid-cols-2");
+      expect(grid).not.toHaveClass("lg:grid-cols-4");
     });
   });
 

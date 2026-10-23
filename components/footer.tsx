@@ -20,7 +20,11 @@ function getLinkIcon(iconName?: string, label?: string) {
   if (normalized.includes("linkedin") || normalized.includes("لینکدین")) {
     return LinkedInIcon;
   }
-  if (normalized.includes("github") || normalized.includes("گیت‌هاب")) {
+  if (
+    normalized.includes("github") ||
+    normalized.includes("گیت‌هاب") ||
+    normalized.includes("گیتهاب")
+  ) {
     return GitHubIcon;
   }
   return null;
