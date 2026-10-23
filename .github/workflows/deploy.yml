@@ -45,9 +45,20 @@ jobs:
         run: npm run lint
 
       - name: Setup Pages configuration
+        id: pages
         uses: actions/configure-pages@v5
 
+      - name: Populate environment variables from GitHub
+        env:
+          VARS_JSON: ${{ toJSON(vars) }}
+        run: |
+          if [ -n "$VARS_JSON" ] && [ "$VARS_JSON" != "{}" ]; then
+            echo "$VARS_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> .env.production
+          fi
+
       - name: Build static site export
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: npm run build
 
       - name: Upload GitHub Pages artifact

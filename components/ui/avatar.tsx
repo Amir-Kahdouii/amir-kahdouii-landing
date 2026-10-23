@@ -26,6 +26,12 @@ export function Avatar({
 }: AvatarProps) {
   const initial = fallbackText || (alt.trim().charAt(0) || "ا");
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const resolvedSrc =
+    src && src.startsWith("/") && !src.startsWith("//") && basePath
+      ? `${basePath}${src}`
+      : src;
+
   return (
     <span
       title={alt}
@@ -37,10 +43,10 @@ export function Avatar({
       )}
       {...props}
     >
-      {src ? (
+      {resolvedSrc ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={src}
+          src={resolvedSrc}
           alt={alt}
           className="size-full rounded-full object-cover"
         />
