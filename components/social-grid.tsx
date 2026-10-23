@@ -131,7 +131,7 @@ export function SocialGrid({
             <Card
               key={key}
               className={cn(
-                "group relative flex flex-col justify-between overflow-hidden",
+                "group relative flex flex-col justify-between overflow-hidden h-full",
                 "border-border/80 bg-card/75 backdrop-blur-xl shadow-xs",
                 "transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl",
                 meta.borderHover
@@ -146,22 +146,22 @@ export function SocialGrid({
                 )}
               />
 
-              <CardHeader className="gap-4 p-6 pb-3">
+              <CardHeader className="gap-3 sm:gap-4 p-5 sm:p-6 pb-2 sm:pb-3">
                 {/* Platform Icon & Stat Tag */}
                 <div className="flex items-center justify-between gap-3">
                   <div
                     className={cn(
-                      "flex size-12 items-center justify-center rounded-2xl border transition-all duration-300 group-hover:scale-105",
+                      "flex size-11 sm:size-12 items-center justify-center rounded-2xl border transition-all duration-300 group-hover:scale-105",
                       meta.badgeBg
                     )}
                   >
-                    <Icon className="size-6 shrink-0" />
+                    <Icon className="size-5 sm:size-6 shrink-0" />
                   </div>
 
                   {channel.stat && (
                     <Badge
                       variant="secondary"
-                      className="inline-flex items-center gap-1.5 rounded-full border-border/70 bg-muted/60 px-3 py-1 text-xs font-normal text-muted-foreground whitespace-nowrap shadow-xs backdrop-blur-xs"
+                      className="inline-flex items-center gap-1.5 rounded-full border-border/70 bg-muted/60 px-2.5 sm:px-3 py-1 text-xs font-normal text-muted-foreground whitespace-nowrap shadow-xs backdrop-blur-xs"
                     >
                       <span
                         className={cn("size-1.5 rounded-full shrink-0", meta.dotColor)}
@@ -173,7 +173,7 @@ export function SocialGrid({
                 </div>
 
                 {/* Identity Titles */}
-                <div className="flex flex-col gap-1 items-start text-start">
+                <div className="flex flex-col gap-0.5 sm:gap-1 items-start text-start">
                   <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground transition-colors">
                     {channel.label}
                   </h3>
@@ -187,7 +187,7 @@ export function SocialGrid({
               </CardHeader>
 
               {/* Channel Description */}
-              <CardContent className="px-6 py-2 flex-1">
+              <CardContent className="px-5 sm:px-6 py-2 flex-1">
                 {channel.description && (
                   <p className="text-sm sm:text-[14.5px] text-foreground/80 leading-relaxed">
                     {channel.description}
@@ -196,14 +196,14 @@ export function SocialGrid({
               </CardContent>
 
               {/* Action Link Footer */}
-              <CardFooter className="p-6 pt-4">
+              <CardFooter className="p-5 sm:p-6 pt-3 sm:pt-4">
                 <a
                   href={channel.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${meta.actionText} - ${channel.label}`}
                   className={cn(
-                    "group/btn inline-flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium",
+                    "group/btn inline-flex w-full items-center justify-between rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-medium",
                     "border border-border/80 bg-background/60 text-foreground shadow-xs backdrop-blur-sm",
                     "transition-all duration-200",
                     "hover:border-border hover:bg-accent/80 hover:text-accent-foreground",

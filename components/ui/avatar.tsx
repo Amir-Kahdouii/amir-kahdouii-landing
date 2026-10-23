@@ -26,7 +26,8 @@ export function Avatar({
 }: AvatarProps) {
   const initial = fallbackText || (alt.trim().charAt(0) || "ا");
 
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const basePath = rawBasePath.trim().replace(/\/+$/, "");
   const resolvedSrc =
     src && src.startsWith("/") && !src.startsWith("//") && basePath
       ? `${basePath}${src}`

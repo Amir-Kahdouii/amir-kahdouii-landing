@@ -43,7 +43,7 @@ export function FeaturedVideos({
           <Card
             key={video.id}
             className={cn(
-              "group relative flex flex-col justify-between overflow-hidden",
+              "group relative flex flex-col justify-between overflow-hidden h-full",
               "border-border/80 bg-card/75 backdrop-blur-xl shadow-sm",
               "transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:border-red-500/30"
             )}
@@ -99,7 +99,7 @@ export function FeaturedVideos({
 
               {/* Card Header & Content */}
               <CardHeader className="gap-2 p-5 pb-2">
-                <CardTitle className="text-base sm:text-lg font-bold text-foreground leading-snug group-hover:text-red-600 transition-colors">
+                <CardTitle className="text-base sm:text-lg font-bold text-foreground leading-normal group-hover:text-red-600 transition-colors line-clamp-2">
                   {video.title}
                 </CardTitle>
                 <CardDescription className="text-sm text-foreground/80 leading-relaxed line-clamp-3">

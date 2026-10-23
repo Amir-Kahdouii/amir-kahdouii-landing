@@ -44,7 +44,7 @@ export function HeroSection({
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-3">
         <h1
           id="hero-title"
-          className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl leading-[1.2]"
+          className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl leading-[1.3] sm:leading-[1.2]"
         >
           {config.name}
         </h1>
@@ -66,7 +66,7 @@ export function HeroSection({
           target="_blank"
           rel="noopener noreferrer"
           size="lg"
-          className="w-full sm:w-auto min-w-[200px] bg-red-600 hover:bg-red-700 text-white shadow-md shadow-red-600/20 gap-2.5 rounded-full px-6"
+          className="w-full max-w-xs sm:max-w-none sm:w-auto min-w-[200px] bg-red-600 hover:bg-red-700 text-white shadow-md shadow-red-600/20 gap-2.5 rounded-full px-6"
         >
           <YouTubeIcon className="size-4 shrink-0 text-white" />
           <span>{config.primaryCta.label}</span>
@@ -80,7 +80,7 @@ export function HeroSection({
           rel="noopener noreferrer"
           variant="outline"
           size="lg"
-          className="w-full sm:w-auto min-w-[200px] border-border bg-card/70 hover:bg-sky-500/10 hover:text-sky-600 hover:border-sky-500/40 text-foreground shadow-sm gap-2.5 rounded-full px-6"
+          className="w-full max-w-xs sm:max-w-none sm:w-auto min-w-[200px] border-border bg-card/70 hover:bg-sky-500/10 hover:text-sky-600 hover:border-sky-500/40 text-foreground shadow-sm gap-2.5 rounded-full px-6"
         >
           <TelegramIcon className="size-4 shrink-0 text-sky-500" />
           <span>{config.secondaryCta.label}</span>

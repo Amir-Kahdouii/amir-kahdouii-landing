@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={`${vazirmatn.variable} h-full`}>
-      <body className="min-h-full flex flex-col font-sans selection:bg-brand/20 selection:text-foreground">
+      <body className="min-h-full flex flex-col font-sans selection:bg-brand/20 selection:text-foreground overflow-x-hidden">
         {children}
       </body>
     </html>

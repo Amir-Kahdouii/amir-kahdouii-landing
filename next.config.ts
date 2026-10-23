@@ -1,10 +1,17 @@
 import type { NextConfig } from "next";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const normalizedBasePath = rawBasePath.trim().replace(/\/+$/, "");
+const basePath =
+  normalizedBasePath && normalizedBasePath !== ""
+    ? normalizedBasePath.startsWith("/")
+      ? normalizedBasePath
+      : `/${normalizedBasePath}`
+    : undefined;
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: basePath ? basePath : undefined,
+  basePath,
   images: {
     unoptimized: true,
   },

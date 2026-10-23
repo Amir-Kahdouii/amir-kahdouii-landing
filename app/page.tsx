@@ -11,16 +11,16 @@ export default function Home() {
     <main
       dir="rtl"
       lang="fa"
-      className="relative flex min-h-screen flex-col items-center justify-start overflow-hidden bg-background text-foreground px-4 py-8 sm:px-6 lg:px-8"
+      className="relative flex min-h-screen w-full max-w-full flex-col items-center justify-start overflow-x-hidden bg-background text-foreground px-4 py-8 sm:px-6 lg:px-8"
     >
       {/* Ambient background light gradients for frosted glass aesthetics */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-40 start-1/2 -z-10 h-[500px] w-[600px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-brand/10 to-accent/20 blur-3xl opacity-70"
+        className="pointer-events-none absolute -top-40 start-1/2 -z-10 h-[500px] w-[600px] max-w-[90vw] sm:max-w-none -translate-x-1/2 rounded-full bg-gradient-to-tr from-brand/10 to-accent/20 blur-3xl opacity-70"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-96 start-1/3 -z-10 h-[400px] w-[500px] -translate-x-1/2 rounded-full bg-accent/25 blur-3xl opacity-50"
+        className="pointer-events-none absolute top-96 start-1/3 -z-10 h-[400px] w-[500px] max-w-[90vw] sm:max-w-none -translate-x-1/2 rounded-full bg-accent/25 blur-3xl opacity-50"
       />
 
       {/* Main Page Container */}

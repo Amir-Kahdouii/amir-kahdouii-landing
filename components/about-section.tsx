@@ -28,7 +28,7 @@ export function AboutSection({
         className={cn(
           "relative overflow-hidden",
           "border-border/80 bg-card/75 backdrop-blur-xl shadow-sm",
-          "p-6 sm:p-8 md:p-10"
+          "p-5 sm:p-8 md:p-10"
         )}
       >
         {/* Subtle top ambient sheen */}
